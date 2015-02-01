@@ -9,7 +9,7 @@ namespace Acceptanstest.Steps
 {
     [Binding]
     public class TidrapporteraSteps
-    {
+    {        
         [Given(@"jag har fyllt i tiden (.*) timmar")]
         public void GivetJagHarFylltITidenTimmar(string tid)
         {
@@ -17,7 +17,7 @@ namespace Acceptanstest.Steps
         }
 
         [Given(@"jag har fyllt i kunden (.*)")]
-        public void GivetJagHarFylltIKundenNissesKottOchTV(string kund)
+        public void GivetJagHarFylltIKunden(string kund)
         {
             ScenarioContext.Current.Pending();
         }
@@ -35,13 +35,13 @@ namespace Acceptanstest.Steps
         }
 
         [Given(@"jag har fyllt följande värden (.*), (.*) och (.*)")]
-        public void GivetJagHarFylltFoljandeVardenNissesKottOchTVJagVetInteHurLangeJagJobbat(string tid, string kund, string kommentar)
+        public void GivetJagHarFylltFoljandeVarden(string tid, string kund, string kommentar)
         {
             ScenarioContext.Current.Pending();
         }
 
         [Then(@"skall jag få (.*)")]
-        public void SaSkallJagFaTidSaknas(string meddelande)
+        public void SaSkallJagFa(string meddelande)
         {
             ScenarioContext.Current.Pending();
         }

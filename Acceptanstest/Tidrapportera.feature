@@ -16,7 +16,7 @@ Scenariomall: Alla obligatoriska fält måste vara ifyllda
 	När jag trycker på lägg till
 	Så skall jag få <meddelande>
 
-	Exempel: 
+Exempel: 
 	| tid | kund               | kommentar                         | meddelande          |
 	|     | Nisses kött och TV | Jag vet inte hur länge jag jobbat | Tid saknas          |
 	| 3   |                    | Vem jobbade jag nu åt			   | Kund saknas         |
