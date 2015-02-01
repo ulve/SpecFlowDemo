@@ -52,6 +52,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Driver\Ie.cs" />
+    <Compile Include="Pages\Registrering.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\TidrapporteraSteps.cs" />
     <Compile Include="Tidrapportera.feature.cs">

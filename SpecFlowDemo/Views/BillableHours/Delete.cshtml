@@ -1,0 +1,48 @@
+﻿@model SpecFlowDemo.Models.BillableHours
+
+@{
+    ViewBag.Title = "Ta bort";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>Är du säker på att du vbill ta bort den här posten?</h3>
+<div>
+    <h4>Fakturerbar tid</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kund)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kund)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kommentar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kommentar)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Tillbaka till listan", "Index")
+        </div>
+    }
+</div>
