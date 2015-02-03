@@ -68,6 +68,8 @@ namespace Acceptanstest
         public virtual void FeatureBackground()
         {
 #line 6
+#line 7
+ testRunner.Given("att jag befinner mig på inmatningssidan", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Givet ");
 #line hidden
         }
         
@@ -76,18 +78,18 @@ namespace Acceptanstest
         public virtual void BokforaTimme()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Bokföra timme", ((string[])(null)));
-#line 8
+#line 9
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 9
- testRunner.Given("jag har fyllt i tiden 3 timmar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Givet ");
 #line 10
- testRunner.And("jag har fyllt i kunden Nisses kött och TV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Och ");
+ testRunner.Given("jag har fyllt i tiden 3 timmar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Givet ");
 #line 11
- testRunner.When("jag trycker på lägg till", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "När ");
+ testRunner.And("jag har fyllt i kunden Gullans 50-talsmöbler", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Och ");
 #line 12
- testRunner.Then("skall en ny post läggast till", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Så ");
+ testRunner.When("jag trycker på lägg till", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "När ");
+#line 13
+ testRunner.Then("skall en ny post för Gullans 50-talsmöbler läggas till", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Så ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -96,19 +98,20 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("Alla obligatoriska fält måste vara ifyllda")]
         [NUnit.Framework.TestCaseAttribute("", "Nisses kött och TV", "Jag vet inte hur länge jag jobbat", "Tid saknas", null)]
         [NUnit.Framework.TestCaseAttribute("3", "", "Vem jobbade jag nu åt", "Kund saknas", null)]
-        [NUnit.Framework.TestCaseAttribute("", "", "ÖÖh vad har jag nu gjort", "Tid och kund saknas", null)]
+        [NUnit.Framework.TestCaseAttribute("", "", "ÖÖh vad har jag nu gjort", "Tid saknas", null)]
+        [NUnit.Framework.TestCaseAttribute("", "", "ÖÖh vad har jag nu gjort", "Kund saknas", null)]
         public virtual void AllaObligatoriskaFaltMasteVaraIfyllda(string tid, string kund, string kommentar, string meddelande, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Alla obligatoriska fält måste vara ifyllda", exampleTags);
-#line 14
+#line 15
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 15
- testRunner.Given(string.Format("jag har fyllt följande värden {0}, {1} och {2}", tid, kund, kommentar), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Givet ");
 #line 16
- testRunner.When("jag trycker på lägg till", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "När ");
+ testRunner.Given(string.Format("jag har fyllt följande värden {0}, {1} och {2}", tid, kund, kommentar), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Givet ");
 #line 17
+ testRunner.When("jag trycker på lägg till", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "När ");
+#line 18
  testRunner.Then(string.Format("skall jag få {0}", meddelande), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Så ");
 #line hidden
             this.ScenarioCleanup();

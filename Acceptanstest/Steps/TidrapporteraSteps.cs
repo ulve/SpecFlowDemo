@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Acceptanstest.Pages;
+using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,41 +11,49 @@ namespace Acceptanstest.Steps
 {
     [Binding]
     public class TidrapporteraSteps
-    {        
+    {
+        [Given(@"att jag befinner mig på inmatningssidan")]
+        public void GivetAttJagBefinnerMigPaInmatningssidan()
+        {
+            Inmatningssida.GåTill();
+        }
+
         [Given(@"jag har fyllt i tiden (.*) timmar")]
         public void GivetJagHarFylltITidenTimmar(string tid)
         {
-            ScenarioContext.Current.Pending();
+            Inmatningssida.FyllTid(tid);
         }
 
         [Given(@"jag har fyllt i kunden (.*)")]
         public void GivetJagHarFylltIKunden(string kund)
         {
-            ScenarioContext.Current.Pending();
-        }
-
-        [When(@"jag trycker på lägg till")]
-        public void NarJagTryckerPaLaggTill()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"skall en ny post läggast till")]
-        public void SaSkallEnNyPostLaggastTill()
-        {
-            ScenarioContext.Current.Pending();
+            Inmatningssida.FyllKund(kund);
         }
 
         [Given(@"jag har fyllt följande värden (.*), (.*) och (.*)")]
         public void GivetJagHarFylltFoljandeVarden(string tid, string kund, string kommentar)
         {
-            ScenarioContext.Current.Pending();
+            Inmatningssida.FyllTid(tid);
+            Inmatningssida.FyllKund(kund);
+            Inmatningssida.FyllKommentar(kommentar);
+        }
+
+        [When(@"jag trycker på lägg till")]
+        public void NarJagTryckerPaLaggTill()
+        {
+            Inmatningssida.TryckLäggTill();
+        }
+
+        [Then(@"skall en ny post för (.*) läggas till")]
+        public void SaSkallEnNyPostForGullans_TalsmoblerLaggasTill(string post)
+        {
+            StringAssert.Contains(post, Översikt.Html);
         }
 
         [Then(@"skall jag få (.*)")]
         public void SaSkallJagFa(string meddelande)
         {
-            ScenarioContext.Current.Pending();
+            StringAssert.Contains(meddelande, Inmatningssida.Html);            
         }
 
     }

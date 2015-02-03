@@ -3,13 +3,14 @@
 	Vill jag som anställd på Agio
 	Kunna bokföra mina jobbade timmar
 	
-Bakgrund: Givet att jag befinner mig på inmatningssidan
+Bakgrund: Allt utgår inmatningssidan
+	Givet att jag befinner mig på inmatningssidan
 
-Scenario: Bokföra timme
+Scenario: Bokföra timme	
 	Givet jag har fyllt i tiden 3 timmar 
-	Och jag har fyllt i kunden Nisses kött och TV 
+	Och jag har fyllt i kunden Gullans 50-talsmöbler 
 	När jag trycker på lägg till
-	Så skall en ny post läggast till
+	Så skall en ny post för Gullans 50-talsmöbler läggas till
 
 Scenariomall: Alla obligatoriska fält måste vara ifyllda
 	Givet jag har fyllt följande värden <tid>, <kund> och <kommentar>
@@ -20,5 +21,6 @@ Exempel:
 	| tid | kund               | kommentar                         | meddelande          |
 	|     | Nisses kött och TV | Jag vet inte hur länge jag jobbat | Tid saknas          |
 	| 3   |                    | Vem jobbade jag nu åt			   | Kund saknas         |
-	|     |                    | ÖÖh vad har jag nu gjort		   | Tid och kund saknas |
+	|     |                    | ÖÖh vad har jag nu gjort		   | Tid saknas			 |
+	|     |                    | ÖÖh vad har jag nu gjort		   | Kund saknas	     |
 

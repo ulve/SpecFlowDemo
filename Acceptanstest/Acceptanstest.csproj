@@ -53,7 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Driver\Ie.cs" />
-    <Compile Include="Pages\Registrering.cs" />
+    <Compile Include="Pages\Inmatningssida.cs" />
+    <Compile Include="Pages\Översikt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\TidrapporteraSteps.cs" />
     <Compile Include="Tidrapportera.feature.cs">
@@ -73,7 +74,25 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\Selenium.WebDriver.IEDriver.2.44.0.0\content\IEDriverServer.exe">
+      <Link>IEDriverServer.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ReadMe.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Label="DownloadIEDriverBuildTask">
+    <CoreBuildDependsOn>DownloadIEDriver;$(CoreBuildDependsOn)</CoreBuildDependsOn>
+    <IEDriverInstallPath>$(SolutionDir)packages\Selenium.WebDriver.IEDriver.2.44.0.0\</IEDriverInstallPath>
+    <IEDriverToolsPath>$(IEDriverInstallPath)tools\</IEDriverToolsPath>
+    <IEDriverInitScriptPath>$(IEDriverToolsPath)Init.ps1</IEDriverInitScriptPath>
+    <IEDriverPath>$(IEDriverInstallPath)content\IEDriverServer.exe</IEDriverPath>
+    <PowerShellExe Condition="'$(PowerShellExe)'==''">%WINDIR%\System32\WindowsPowerShell\v1.0\powershell.exe</PowerShellExe>
+  </PropertyGroup>
+  <Target Name="DownloadIEDriver" Label="DownloadIEDriverBuildTask">
+    <Exec Condition="!Exists('$(IEDriverPath)')" Command="$(PowerShellExe) -NonInteractive -executionpolicy Unrestricted -command &quot;&amp; { &amp;'$(IEDriverInitScriptPath)' '$(IEDriverInstallPath)' '$(IEDriverToolsPath)'} &quot;" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
