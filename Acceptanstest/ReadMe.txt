@@ -1,2 +1,2 @@
-﻿wusa /uninstall /kb:3025390/quiet /norestart
+﻿wusa /uninstall /kb:3025390 /quiet /norestart
 iisexpress /site:SpecFlowDemo
